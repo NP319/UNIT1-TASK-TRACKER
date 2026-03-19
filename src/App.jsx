@@ -1,10 +1,17 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Home from "./pages/Home";
+import About from "./pages/About";
+
 function App() {
   return (
     <div>
       <Header />
-      <h1>Daily Task Tracker</h1>
-      <p>Hello LaunchCode 🚀</p>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
