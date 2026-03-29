@@ -29,6 +29,18 @@ function Home() {
   setTasks(updatedTasks);
 };
 
+  const updateTask = (indexToUpdate, newText) => {
+  const updatedTasks = tasks.map((task, index) => {
+    if (index === indexToUpdate) {
+      return { ...task, text: newText };
+    }
+    return task;
+  });
+
+  setTasks(updatedTasks);
+};
+
+
   return (
     <div className="container">
       <h1>Daily Task Tracker</h1>
@@ -37,6 +49,7 @@ function Home() {
         tasks={tasks} 
         deleteTask={deleteTask} 
         toggleTask={toggleTask} 
+        updateTask={updateTask}
       />
     </div>
   );

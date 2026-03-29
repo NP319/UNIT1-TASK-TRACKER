@@ -1,6 +1,6 @@
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks, deleteTask, toggleTask }) {
+function TaskList({ tasks, deleteTask, toggleTask, updateTask }) {
   return (
     <div>
       <h2>Task List</h2>
@@ -12,6 +12,7 @@ function TaskList({ tasks, deleteTask, toggleTask }) {
           index={index}
           deleteTask={deleteTask}
           toggleTask={toggleTask}
+          updateTask={updateTask}
         />
       ))}
     </div>
