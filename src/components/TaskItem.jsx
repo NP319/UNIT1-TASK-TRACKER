@@ -10,23 +10,21 @@ function TaskItem({ task, index, deleteTask, toggleTask, updateTask }) {
   };
 
   return (
-    <div>
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => toggleTask(index)}
-      />
+    <div className="task-item">
+      
+      <div className="task-left">
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => toggleTask(index)}
+        />
 
-      {isEditing ? (
-        <>
+        {isEditing ? (
           <input
             value={newText}
             onChange={(e) => setNewText(e.target.value)}
           />
-          <button onClick={handleSave}>Save</button>
-        </>
-      ) : (
-        <>
+        ) : (
           <span
             style={{
               textDecoration: task.completed ? "line-through" : "none"
@@ -34,11 +32,24 @@ function TaskItem({ task, index, deleteTask, toggleTask, updateTask }) {
           >
             {task.text}
           </span>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-        </>
-      )}
+        )}
+      </div>
 
-      <button onClick={() => deleteTask(index)}>Delete</button>
+      <div className="task-actions">
+        {isEditing ? (
+          <button onClick={handleSave}>Save</button>
+        ) : (
+          <button onClick={() => setIsEditing(true)}>Edit</button>
+        )}
+
+        <button
+          className="delete-btn"
+          onClick={() => deleteTask(index)}
+        >
+          Delete
+        </button>
+      </div>
+
     </div>
   );
 }

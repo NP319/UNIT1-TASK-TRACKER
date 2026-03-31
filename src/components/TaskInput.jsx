@@ -11,7 +11,7 @@ function TaskInput({ addTask }) {
   };
 
   return (
-    <div>
+    <div className="input-group">
       <input
         type="text"
         placeholder="Enter a task..."
