@@ -124,5 +124,21 @@ h2 {
   background-color: #2563EB;
 }
 
+/*FILTER BUTTONS*/
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
+.filter-buttons button {
+  background-color: #E5E7EB;
+  color: #111827;
+}
+
+.filter-buttons button:hover {
+  background-color: #2563EB;
+  color: white;
+}
  

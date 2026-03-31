@@ -4,6 +4,7 @@ import TaskList from "../components/TaskList";
 
 function Home() {
   const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState("all");
 
   const addTask = (newTask) => {
   const taskObj = {
@@ -12,7 +13,7 @@ function Home() {
   };
   setTasks([...tasks, taskObj]);
 };
-
+  
   const deleteTask = (indexToDelete) => {
   const updatedTasks = tasks.filter((task, index) => index !== indexToDelete);
   setTasks(updatedTasks);
@@ -39,14 +40,26 @@ function Home() {
 
   setTasks(updatedTasks);
 };
+  
+  const filteredTasks = tasks.filter((task) => {
+  if (filter === "active") return !task.completed;
+  if (filter === "completed") return task.completed;
+  return true; // all
+});
+
 
 
   return (
     <div className="container">
       <h1>Daily Task Tracker</h1>
       <TaskInput addTask={addTask} />
+      <div className="filter-buttons">
+          <button onClick={() => setFilter("all")}>All</button>
+          <button onClick={() => setFilter("active")}>Active</button>
+          <button onClick={() => setFilter("completed")}>Completed</button>
+      </div>
       <TaskList 
-        tasks={tasks} 
+        tasks={filteredTasks} 
         deleteTask={deleteTask} 
         toggleTask={toggleTask} 
         updateTask={updateTask}
