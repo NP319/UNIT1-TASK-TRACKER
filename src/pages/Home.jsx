@@ -53,7 +53,7 @@ function Home() {
     <div className="container">
       <h1>Daily Task Tracker</h1>
       <TaskInput addTask={addTask} />
-      <div className="filter-buttons">
+      <div className="filters">
           <button onClick={() => setFilter("all")}>All</button>
           <button onClick={() => setFilter("active")}>Active</button>
           <button onClick={() => setFilter("completed")}>Completed</button>

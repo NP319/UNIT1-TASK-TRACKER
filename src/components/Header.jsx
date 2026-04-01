@@ -6,7 +6,7 @@ function Header() {
     <nav>
       <h1>TaskTracker</h1>
 
-      <div>
+      <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
       </div>
