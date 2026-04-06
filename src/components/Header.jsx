@@ -8,6 +8,7 @@ function Header() {
 
       <div className="nav-links">
         <Link to="/">Home</Link>
+        <Link to="/tracker">Task Tracker</Link>
         <Link to="/about">About</Link>
       </div>
     </nav>
