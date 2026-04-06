@@ -1,71 +1,56 @@
-import { useState } from "react";
-import TaskInput from "../components/TaskInput";
-import TaskList from "../components/TaskList";
-
-function Home() {
-  const [tasks, setTasks] = useState([]);
-  const [filter, setFilter] = useState("all");
-
-  const addTask = (newTask) => {
-  const taskObj = {
-    text: newTask,
-    completed: false
-  };
-  setTasks([...tasks, taskObj]);
-};
-  
-  const deleteTask = (indexToDelete) => {
-  const updatedTasks = tasks.filter((task, index) => index !== indexToDelete);
-  setTasks(updatedTasks);
-};
-
-  const toggleTask = (indexToToggle) => {
-  const updatedTasks = tasks.map((task, index) => {
-    if (index === indexToToggle) {
-      return { ...task, completed: !task.completed };
-    }
-    return task;
-  });
-
-  setTasks(updatedTasks);
-};
-
-  const updateTask = (indexToUpdate, newText) => {
-  const updatedTasks = tasks.map((task, index) => {
-    if (index === indexToUpdate) {
-      return { ...task, text: newText };
-    }
-    return task;
-  });
-
-  setTasks(updatedTasks);
-};
-  
-  const filteredTasks = tasks.filter((task) => {
-  if (filter === "active") return !task.completed;
-  if (filter === "completed") return task.completed;
-  return true; // all
-});
-
-
-
+function About() {
   return (
     <div className="container">
-      <h1>Daily Task Tracker</h1>
-      <TaskInput addTask={addTask} />
-      <div className="filters">
-          <button onClick={() => setFilter("all")}>All</button>
-          <button onClick={() => setFilter("active")}>Active</button>
-          <button onClick={() => setFilter("completed")}>Completed</button>
+      <h1>About Daily Task Tracker</h1>
+
+      <div className="about-card">
+        <p>
+          This application helps users organize daily tasks, track progress, and stay productive.
+        </p>
+
+        <p>
+          Daily Task Tracker is designed to be simple yet powerful, allowing you to manage your tasks efficiently without unnecessary complexity.
+        </p>
       </div>
-      <TaskList 
-        tasks={filteredTasks} 
-        deleteTask={deleteTask} 
-        toggleTask={toggleTask} 
-        updateTask={updateTask}
-      />
+
+      {/* 3 FEATURE BOXES */}
+      <div className="about-features">
+        <div className="feature-box">
+          <h3>Easy to Use</h3>
+          <p>
+            Simple interface to add, complete, and delete tasks with just a few clicks.
+          </p>
+        </div>
+
+        <div className="feature-box">
+          <h3>Stay Organized</h3>
+          <p>
+            Filter your tasks to see all, active, or completed items at a glance.
+          </p>
+        </div>
+
+        <div className="feature-box">
+          <h3>Boost Productivity</h3>
+          <p>
+            Track your progress and maintain focus on what matters most.
+          </p>
+        </div>
+      </div>
+
+      {/* FEATURES LIST (SEPARATE SECTION) */}
+      <div className="features-section">
+        <h2>Features</h2>
+
+        <ul>
+          <li>✔ Add new tasks instantly</li>
+          <li>✔ Mark tasks as complete with a single click</li>
+          <li>✔ Delete tasks you no longer need</li>
+          <li>✔ Filter tasks by status (All, Active, Completed)</li>
+          <li>✔ Clean and intuitive user interface</li>
+        </ul>
+      </div>
     </div>
   );
 }
 
-export default Home;
+export default About;
