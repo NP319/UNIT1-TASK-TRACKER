@@ -136,9 +136,11 @@ button:hover {
 /* ABOUT PAGE */
 .about-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
+  padding: 25px;
+  border-radius: 14px; /* slightly more rounded */
+  margin-top: 25px;
+  line-height: 1.6;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* stronger soft shadow */
 }
 
 .about-features {
