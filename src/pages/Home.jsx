@@ -1,4 +1,4 @@
-function About() {
+function Home() {
   return (
     <div className="container">
       <h1>About Daily Task Tracker</h1>
@@ -53,4 +53,4 @@ function About() {
   );
 }
 
-export default About;
+export default Home;
