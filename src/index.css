@@ -44,7 +44,7 @@ nav a {
 /* MAIN CONTAINER */
 .container {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 80px auto;
 }
 
 /* TITLE */
@@ -136,9 +136,11 @@ button:hover {
 /* ABOUT PAGE */
 .about-card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
+  padding: 25px;
+  border-radius: 14px; /* slightly more rounded */
+  margin-top: 25px;
+  line-height: 1.6;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* stronger soft shadow */
 }
 
 .about-features {
@@ -157,11 +159,14 @@ button:hover {
 
 /* FOOTER */
 .footer {
-  background: #1F2937;
-  color: white;
+  padding: 20px;
   text-align: center;
-  padding: 15px;
-  margin-top: 20px;
+  background: #2F3E2F;
+  color: #E5E7EB;
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid #374151;
 }
 
 /* RESPONSIVE (REQUIREMENT ✔) */
