@@ -83,13 +83,13 @@ function TaskTracker() {
 
       <div className="filters">
         <button onClick={() => setFilter("all")}
-          style={{ backgroundColor: filter === "all" ? "yellow" : "" }}>
+          style={{ backgroundColor: filter === "all" ? "pink" : "" }}>
         All</button>
         <button onClick={() => setFilter("active")}
-          style={{ backgroundColor: filter === "active" ? "yellow" : "" }}>
+          style={{ backgroundColor: filter === "active" ? "pink" : "" }}>
         Active</button>
         <button onClick={() => setFilter("completed")}
-          style={{ backgroundColor: filter === "completed" ? "yellow" : "" }}> 
+          style={{ backgroundColor: filter === "completed" ? "pink" : "" }}> 
         Completed</button>
       </div>
 
