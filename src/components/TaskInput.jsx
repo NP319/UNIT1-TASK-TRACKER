@@ -10,6 +10,13 @@ function TaskInput({ addTask }) {
     setInput("");
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();   
+      handleSubmit();
+    }
+  };
+
   return (
     <div className="input-group">
       <input
@@ -17,6 +24,7 @@ function TaskInput({ addTask }) {
         placeholder="Enter a task..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
       <button onClick={handleSubmit}>Add Task</button>
     </div>

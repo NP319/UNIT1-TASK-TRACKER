@@ -12,12 +12,11 @@ function TaskTracker() {
       completed: false
     };
 
-    const newTasks = [...tasks, newItem];
-    setTasks(newTasks);
+    setTasks([...tasks, newItem]);
   }
 
   function deleteTask(indexToDelete) {
-    const newTasks = tasks.filter(function(task, index) {
+    const newTasks = tasks.filter((task, index) => {
       return index !== indexToDelete;
     });
 
@@ -25,10 +24,10 @@ function TaskTracker() {
   }
 
   function toggleTask(indexToToggle) {
-    const newTasks = tasks.map(function(task, index) {
+    const newTasks = tasks.map((task, index) => {
       if (index === indexToToggle) {
         return {
-          text: task.text,
+          ...task,
           completed: !task.completed
         };
       } else {
@@ -39,33 +38,41 @@ function TaskTracker() {
     setTasks(newTasks);
   }
 
-  function updateTask(indexToUpdate, newText) {
-    const newTasks = tasks.map(function(task, index) {
-      if (index === indexToUpdate) {
-        return {
-          text: newText,
-          completed: task.completed
-        };
-      } else {
-        return task;
-      }
-    });
 
-    setTasks(newTasks);
+  function editTask(indexToEdit) {
+    if (filter !== "all") {
+      alert("Please switch to 'All' to edit tasks");
+      return;
   }
 
+  const newText = prompt("Edit your task:");
+
+  if (!newText || newText.trim() === "") return;
+
+  const newTasks = tasks.map((task, index) => {
+    if (index === indexToEdit) {
+      return { ...task, text: newText };
+    } else {
+      return task;
+    }
+  });
+
+  setTasks(newTasks);
+} 
+
+  //FILTER 
   let filteredTasks;
 
   if (filter === "active") {
-    filteredTasks = tasks.filter(function(task) {
-      return task.completed === false;
-    });
+    filteredTasks = tasks
+      .map((task, index) => ({ task, index }))
+      .filter(item => item.task.completed === false);
   } else if (filter === "completed") {
-    filteredTasks = tasks.filter(function(task) {
-      return task.completed === true;
-    });
+    filteredTasks = tasks
+      .map((task, index) => ({ task, index }))
+      .filter(item => item.task.completed === true);
   } else {
-    filteredTasks = tasks;
+    filteredTasks = tasks.map((task, index) => ({ task, index }));
   }
 
   return (
@@ -75,16 +82,22 @@ function TaskTracker() {
       <TaskInput addTask={addTask} />
 
       <div className="filters">
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("active")}>Active</button>
-        <button onClick={() => setFilter("completed")}>Completed</button>
+        <button onClick={() => setFilter("all")}
+          style={{ backgroundColor: filter === "all" ? "yellow" : "" }}>
+        All</button>
+        <button onClick={() => setFilter("active")}
+          style={{ backgroundColor: filter === "active" ? "yellow" : "" }}>
+        Active</button>
+        <button onClick={() => setFilter("completed")}
+          style={{ backgroundColor: filter === "completed" ? "yellow" : "" }}> 
+        Completed</button>
       </div>
 
       <TaskList
         tasks={filteredTasks}
         deleteTask={deleteTask}
         toggleTask={toggleTask}
-        updateTask={updateTask}
+        editTask={editTask}
       />
     </div>
   );

@@ -1,19 +1,17 @@
+import React from "react";
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks, deleteTask, toggleTask, updateTask }) {
+function TaskList({ tasks, deleteTask, toggleTask, editTask }) {
   return (
-    
     <div>
-      <h2>Task List</h2>
-
-      {tasks.map((task, index) => (
+      {tasks.map(({ task, index }) => (
         <TaskItem
           key={index}
           task={task}
           index={index}
           deleteTask={deleteTask}
           toggleTask={toggleTask}
-          updateTask={updateTask}
+          editTask={editTask}
         />
       ))}
     </div>
