@@ -26,6 +26,8 @@ function About() {
           alt="Profile" 
           style={{ width: "120px", borderRadius: "50%", marginBottom: "15px" }}
         />
+
+        
         <p>
           Hi, I’m Nikita — a developer focused on building simple, clean, and practical applications that help make everyday tasks easier to manage.
         </p>
