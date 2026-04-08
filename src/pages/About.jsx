@@ -1,4 +1,5 @@
 import { useState } from "react";
+import profile from "../assets/profile.jpeg";
 
 function About() {
   const [name, setName] = useState("");
@@ -20,6 +21,11 @@ function About() {
       <div className="about-card">
         <h2>About Me</h2>
 
+        <img 
+          src={profile} 
+          alt="Profile" 
+          style={{ width: "120px", borderRadius: "50%", marginBottom: "15px" }}
+        />
         <p>
           Hi, I’m Nikita — a developer focused on building simple, clean, and practical applications that help make everyday tasks easier to manage.
         </p>
