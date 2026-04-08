@@ -5,6 +5,7 @@ import TaskList from "../components/TaskList";
 function TaskTracker() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
+  const [message, setMessage] = useState("");
 
   function addTask(newTask) {
     const newItem = {
@@ -41,7 +42,7 @@ function TaskTracker() {
 
   function editTask(indexToEdit) {
     if (filter !== "all") {
-      alert("Please switch to 'All' to edit tasks");
+      setMessage("Please switch to 'All' to edit tasks");
       return;
   }
 
@@ -58,6 +59,7 @@ function TaskTracker() {
   });
 
   setTasks(newTasks);
+  setMessage(""); // clear message after success
 } 
 
   //FILTER 
@@ -92,6 +94,14 @@ function TaskTracker() {
           style={{ backgroundColor: filter === "completed" ? "pink" : "" }}> 
         Completed</button>
       </div>
+
+       {/*MESSAGE*/}
+        {message && (
+          <p style={{ color: "grey", textAlign: "center" }}>
+        {message}
+          </p>
+        )}
+
 
       <TaskList
         tasks={filteredTasks}
