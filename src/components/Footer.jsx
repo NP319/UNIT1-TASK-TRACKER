@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="footer">
-      © 2026 Daily Task Tracker
+      <p>© 2026 Daily Task Tracker • Built by Nikita</p>
     </footer>
   );
 }

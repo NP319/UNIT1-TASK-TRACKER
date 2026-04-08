@@ -157,11 +157,14 @@ button:hover {
 
 /* FOOTER */
 .footer {
-  background: #1F2937;
-  color: white;
+  padding: 20px;
   text-align: center;
-  padding: 15px;
-  margin-top: 20px;
+  background: #2F3E2F;
+  color: #E5E7EB;
+  width: 100%;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid #374151;
 }
 
 /* RESPONSIVE (REQUIREMENT ✔) */
