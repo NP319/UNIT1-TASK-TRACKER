@@ -47,8 +47,7 @@ function About() {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <input
-          type="text"
+        <textarea
           placeholder="Share your message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}

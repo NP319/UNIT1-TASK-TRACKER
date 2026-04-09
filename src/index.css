@@ -72,7 +72,7 @@ button {
   padding: 10px 14px;
   border: none;
   border-radius: 8px;
-  background-color: #2563EB;
+  background-color: #082e7f;
   color: white;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -114,7 +114,7 @@ button:hover {
 
 /* DELETE BUTTON */
 .delete-btn {
-  background-color: #DC2626;
+  background-color: #f07143;
 }
 
 /* FILTER BUTTONS */
