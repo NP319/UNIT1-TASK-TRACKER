@@ -75,9 +75,11 @@ button {
   background-color: #2563EB;
   color: white;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 button:hover {
+  transform: translateY(-3px);
   opacity: 0.9;
 }
 
