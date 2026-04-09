@@ -145,6 +145,28 @@ button:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* stronger soft shadow */
 }
 
+.about-card input,
+.about-card textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;        /* fixes font */
+  box-sizing: border-box;      /* fixes shift */
+}
+
+.about-card textarea {
+  height: 80px;
+  resize: none;
+}
+
+.about-card textarea {
+  height: 80px;
+  resize: none;
+}
+
 .about-features {
   display: flex;
   gap: 15px;
