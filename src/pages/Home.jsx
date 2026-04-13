@@ -1,9 +1,11 @@
+// Home page component
+// Displays overview and key features of the application
 function Home() {
   return (
     <div className="container">
-      <h1>About Daily Task Tracker</h1>
+      <h1>About Daily Task Tracker</h1>    {/* Page title */}
 
-      <div className="about-card">
+      <div className="about-card">         {/* Intro card explaining purpose of the app */}
         <p>
           This application helps users organize daily tasks, track progress, and stay productive.
         </p>
@@ -53,4 +55,5 @@ function Home() {
   );
 }
 
+// Export Home component
 export default Home;

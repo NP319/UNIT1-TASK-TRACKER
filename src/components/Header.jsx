@@ -1,10 +1,9 @@
-
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <nav>
-      <h1>TaskTracker</h1>
+      <h1 className="brand">TaskTracker</h1>
 
       <div className="nav-links">
         <Link to="/">Home</Link>
