@@ -2,22 +2,25 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #F8F3E1;
-  color: #111827;
+  background-color: #F8F3E1; /* soft cream background */
+  color: #111827; /* dark text for readability */
 }
 
 /* APP LAYOUT */
+/* Ensures full height layout with footer pushed to bottom */
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Allows main content to expand and fill available space */
 .main-content {
   flex: 1;
 }
 
 /* ROOT */
+/* Centers app and limits width for better readability */
 #root {
   max-width: 1100px;
   margin: 0 auto;
@@ -25,8 +28,9 @@ body {
 }
 
 /* NAVBAR */
+/* Main navigation bar styling */
 nav {
-  background-color: #41431B;
+  background-color: #41431B; /* olive theme */
   color: white;
   padding: 28px 40px;
   display: flex;
@@ -35,25 +39,30 @@ nav {
   border-radius: 14px;
 }
 
+/* Navigation links styling */
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 15px;
 }
 
+/* Brand (TaskTracker title) */
+/* fade-in animation for UX */
 .brand {
   color: #F5F1E6;
   font-size: 28px;
   font-weight: 600;
   margin: 0;
   letter-spacing: 0.5px;
+
+   /*Animation*/
   opacity: 0;
   transform: translateY(8px);
-  animation: fadeInBrand 0.6s ease forwards;
   animation: fadeInBrand 0.6s ease forwards;
   animation-delay: 0.2s;
 }
 
+/* Keyframes for brand animation */
 @keyframes fadeInBrand {
   to {
     opacity: 1;
@@ -62,24 +71,28 @@ nav a {
 }
 
 /* MAIN CONTAINER */
+/* Centers task tracker content */
 .container {
   max-width: 600px;
   margin: 80px auto;
 }
 
 /* TITLE */
+/* Centers page titles */
 h1 {
   text-align: center;
   margin-bottom: 30px;
 }
 
 /* INPUT GROUP */
+/* Aligns input and button side by side */
 .input-group {
   display: flex;
   gap: 10px;
   margin-bottom: 25px;
 }
 
+/* Input field styling */
 input {
   flex: 1;
   padding: 12px;
@@ -88,6 +101,7 @@ input {
 }
 
 /* BUTTON */
+/* General button styling with hover animation */
 button {
   padding: 10px 14px;
   border: none;
@@ -104,6 +118,7 @@ button:hover {
 }
 
 /* TASK ITEM */
+/* Individual task container */
 .task-item {
   background: white;
   padding: 14px;
@@ -122,22 +137,26 @@ button:hover {
 }
 
 /* TASK TEXT */
+/* Prevents text overflow issues */
 .task-left span {
   word-break: break-word;
 }
 
 /* RIGHT SIDE (buttons) */
+/* Aligns edit/delete buttons */
 .task-actions {
   display: flex;
   gap: 10px;
 }
 
 /* DELETE BUTTON */
+/* Distinct color for delete action */
 .delete-btn {
   background-color: #f07143;
 }
 
 /* FILTER BUTTONS */
+/* Container for filter options */
 .filters {
   display: flex;
   justify-content: center;
@@ -145,26 +164,30 @@ button:hover {
   margin-bottom: 20px;
 }
 
+/* Default filter button style */
 .filters button {
   background-color: #E5E7EB;
   color: black;
 }
 
+/* Active hover state for filters */
 .filters button:hover {
   background-color: #2563EB;
   color: white;
 }
 
 /* ABOUT PAGE */
+/* Card-style layout */
 .about-card {
   background: white;
   padding: 25px;
-  border-radius: 14px; /* slightly more rounded */
+  border-radius: 14px; /* slightly rounded */
   margin-top: 25px;
   line-height: 1.6;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* stronger soft shadow */
 }
 
+/* Input and textarea inside About page */
 .about-card input,
 .about-card textarea {
   display: block;
@@ -177,11 +200,13 @@ button:hover {
   box-sizing: border-box;      /* fixes shift */
 }
 
+/* Textarea specific styling */
 .about-card textarea {
   height: 80px;
   resize: none;
 }
 
+/* Features section inside About page */
 .about-card textarea {
   height: 80px;
   resize: none;
@@ -193,6 +218,7 @@ button:hover {
   margin-top: 20px;
 }
 
+/* Individual feature boxes */
 .feature-box {
   flex: 1;
   background: white;
@@ -201,7 +227,7 @@ button:hover {
   text-align: center;
 }
 
-/* FOOTER */
+/* FOOTER and Footer Styling */
 .footer {
   padding: 20px;
   text-align: center;
@@ -213,33 +239,40 @@ button:hover {
   border-top: 1px solid #374151;
 }
 
-/* RESPONSIVE (REQUIREMENT ✔) */
+/* RESPONSIVE DESIGN */
+/* Adjusts layout for smaller screens */
 @media (max-width: 600px) {
 
+  /* Stack navbar items vertically */
   nav {
     flex-direction: column;
     align-items: flex-start;
   }
 
+   /* Stack input and button */
   .input-group {
     flex-direction: column;
   }
 
+  /* Stack task content */
   .task-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
 
+  /* Align buttons properly on small screens */
   .task-actions {
     width: 100%;
     justify-content: flex-end;
   }
 
+  /* Stack features vertically */
   .about-features {
     flex-direction: column;
   }
 
+   /* Stack filter buttons */
   .filters {
     flex-direction: column;
   }
