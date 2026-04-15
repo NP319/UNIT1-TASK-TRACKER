@@ -50,7 +50,7 @@ nav a {
 /* fade-in animation for UX */
 .brand {
   color: #F5F1E6;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 600;
   margin: 0;
   letter-spacing: 0.5px;
@@ -58,7 +58,7 @@ nav a {
    /*Animation*/
   opacity: 0;
   transform: translateY(8px);
-  animation: fadeInBrand 0.6s ease forwards;
+  animation: fadeInBrand 0.8s ease forwards;
   animation-delay: 0.2s;
 }
 
@@ -201,12 +201,6 @@ button:hover {
 }
 
 /* Textarea specific styling */
-.about-card textarea {
-  height: 80px;
-  resize: none;
-}
-
-/* Features section inside About page */
 .about-card textarea {
   height: 80px;
   resize: none;
